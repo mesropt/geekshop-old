@@ -8,9 +8,10 @@ def index(request):
     return render(request, 'mainapp/index.html')
 
 def products(request):
-    file_path = os.path.join(MODULE_DIR, 'fixtures/goods.json')
     context = {
-         'title': 'geekshop',
-         'products': json.load(open(file_path, encoding='utf-8'))
+        'title': 'geekshop',
+        'categories': ProductCategory.objects.all(),
+        'products': Product.objects.all()
     }
     return render(request, 'mainapp/products.html', context)
+
