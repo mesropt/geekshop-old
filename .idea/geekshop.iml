@@ -27,6 +27,7 @@
       <list>
         <option value="$MODULE_DIR$/mainapp/templates" />
         <option value="$MODULE_DIR$/mainapp/templates/mainapp" />
+        <option value="$MODULE_DIR$/users/templates" />
       </list>
     </option>
   </component>
