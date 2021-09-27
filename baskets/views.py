@@ -6,16 +6,15 @@ from mainapp.models import Product
 from baskets.models import Basket
 
 # Create your views here.
-
 @login_required
-def basket_add(request, product_id):
+def basket_add(request,product_id):
     user_select = request.user
     product = Product.objects.get(id=product_id)
-    basket = Basket.objects.filter(user=user_select,product=product)
-    if not basket.exists():
-        Basket.objects.create(user=user_select,product=product,quantity=1)
+    baskets = Basket.objects.filter(user=user_select,product=product)
+    if not baskets.exists():
+         Basket.objects.create(user=user_select,product=product,quantity=1)
     else:
-        basket = basket.first()
+        basket = baskets.first()
         basket.quantity +=1
         basket.save()
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
