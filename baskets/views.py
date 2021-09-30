@@ -22,9 +22,5 @@ def basket_add(request,product_id):
 
 @login_required
 def basket_remove(request,product_id):
-        
-
-@login_required
-def basket_remove(request,product_id):
     Basket.objects.get(id = product_id).delete()
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
