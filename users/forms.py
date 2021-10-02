@@ -36,7 +36,7 @@ class UserRegisterForm(UserCreationForm):
             'placeholder'] = 'Введите фамилию'
         self.fields['password1'].widget.attrs['placeholder'] = 'Введите пароль'
         self.fields['password2'].widget.attrs[
-            'placeholder'] = 'Подтвердите пароль'
+            'placeholder'] = 'Подтвердите пароль'ext
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'form-control py-4'
 
@@ -59,6 +59,6 @@ class UserProfileForm(UserChangeForm):
 
         def clean_image(self):
             data = self.cleaned_data['image']
-            if data.size > 1024:
+            if data.size > 1024*1024:
                 raise forms.ValidationError('Файл слишком большой')
             return data
