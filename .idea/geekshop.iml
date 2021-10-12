@@ -32,6 +32,7 @@
         <option value="$MODULE_DIR$/mainapp/templates/mainapp" />
         <option value="$MODULE_DIR$/users/templates" />
         <option value="$MODULE_DIR$/baskets/templates" />
+        <option value="$MODULE_DIR$/admins/templates" />
       </list>
     </option>
   </component>
